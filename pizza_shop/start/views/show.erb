@@ -1,10 +1,12 @@
-<h1><%= @orders.first_name%></h1>
-<h1><%= @orders.last_name %></h1>
-<h1>Topping: <%= @orders.topping %></h1>
-<h1>Quantity: <%= @orders.quantity %></h1>
+<h1>Order Details</h1>
+<p>First Name: <%= @orders.first_name%></p>
+<p>Last Name: <%= @orders.last_name %></p>
+<p>Topping: <%= @orders.topping %></p>
+<p>Quantity: <%= @orders.quantity %></p>
+<p>Cost: £<%= @orders.total %></P>
 
 <form method="post" action="/pizza_orders/<%=@orders.id%>/delete">
   <input type="submit" value="Delete Order"/>
 </form>
 
-<p><a href="/pizza_orders/<%=@orders.id%>/edit">Edit Order</a></p>
+<p id="edit"><a href="/pizza_orders/<%=@orders.id%>/edit">Edit</a></p>

@@ -15,7 +15,6 @@ get '/pizza_orders/new' do
   erb(:new)
 end
 
-
 post '/pizza_orders' do
   @order = PizzaOrder.new(params)
   @order.save()
@@ -27,10 +26,10 @@ post '/pizza_orders/:id/delete' do
   redirect "/pizza_orders"
 end
 
-post '/pizza_orders/:id/update' do
+post '/pizza_orders/:id' do
   @order = PizzaOrder.new(params)
   @order.update()
-  redirect "/pizza_orders"
+  redirect "/pizza_orders/#{@order.id}"
 end
 
 get '/pizza_orders/:id/edit' do
